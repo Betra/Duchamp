@@ -1,7 +1,18 @@
-html {
-    background: #aaaaaa;
-    height: 100%;
+:root {
+    --inputBackground: #111111;
+    --textColor:  #01FF70;
+  }
+  
 
+html {
+    background: var(--inputBackground);
+    height: 100%;
+    caret-color: #dddddd;
+    color: var(--textColor);
+    font-size: 20px;
+}
+body {
+    margin: 8px;
 }
 
 .layout {
@@ -31,3 +42,4 @@ html {
 section {
     border: 2px solid black;
 }
+
