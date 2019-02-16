@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './Text.css';
+import styles from './Text.module.css';
 
 class Text extends React.Component {
   constructor(props) {
@@ -19,16 +19,16 @@ class Text extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-      <textarea 
-        className={styles.inputArea} 
-        value={this.state.text} 
-        onChange={this.handleInput}
-        placeholder='Insert your text here' 
-        />
-        <br />
-        <input type ="submit" />
-      </form>
+        <form onSubmit={this.handleSubmit}>
+          <textarea 
+           className={styles.inputArea} 
+            value={this.state.text} 
+            onChange={this.handleInput}
+            placeholder='Insert your text here' 
+          />
+          <br />
+          <input type ="submit" />
+        </form>
     );
   }
 }
