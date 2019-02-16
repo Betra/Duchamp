@@ -1,17 +1,27 @@
 import React, { Component } from 'react';
 import styles from './Text.module.css';
+const lineHeight = 18;
 
 class Text extends React.Component {
   constructor(props) {
     super(props);
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
-    this.state = {text: ''};
+    this.state = {text: '', rows: 1 };
   }
 
-  handleInput = event => this.setState({text: event.target.value});
-  
+  handleInput(event) { 
+    const oldRows = event.target.rows;
+    event.target.rows = 1;
+    const newRows = ~~(event.target.scrollHeight/lineHeight);
+
+    if (newRows === oldRows) { event.target.rows = newRows; }
+    this.setState({
+      text: event.target.value,
+      rows: newRows
+    });
+  }
+
   handleSubmit(event) {
       alert(this.state.text);
       event.preventDefault();
@@ -20,10 +30,12 @@ class Text extends React.Component {
   render() {
     return (
         <form onSubmit={this.handleSubmit}>
-          <textarea 
-           className={styles.inputArea} 
+          <textarea autoFocus
+            rows={this.state.rows}
+            className={styles.inputArea} 
             value={this.state.text} 
             onChange={this.handleInput}
+            style={{lineHeight: `${lineHeight}px`}}
             placeholder='Insert your text here' 
           />
           <br />
@@ -32,5 +44,4 @@ class Text extends React.Component {
     );
   }
 }
-
 export default Text;
