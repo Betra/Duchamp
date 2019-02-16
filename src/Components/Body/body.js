@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import html from './body.css';
+import styles from './body.module.css';
 import Text from '../Text/Text';
+import InputArea from '../InputArea/InputArea';
 
 function Body(props) {
   return (
-      <div>
-        Hello World!
+    <InputArea>
       <Text />
-      </div>
+    </InputArea>
+
     );
 }
 
