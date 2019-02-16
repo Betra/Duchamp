@@ -1,5 +1,9 @@
 .inputArea {
-  background: #2288ff;
+  background: #333333;
   font-size: 30px;
   width: 100%;
+  padding: 20px 20px 20px 20px;
+  box-sizing: border-box;
+  outline: none;
+  resize: none;
 }
