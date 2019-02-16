@@ -3,21 +3,29 @@ import styles from './body.module.css';
 import Text from '../Text/Text';
 import InputArea from '../InputArea/InputArea';
 
+
+
+function hookText(props) {
+  alert("HEY");
+}
 function Body(props) {
+  
   return (
     <div className={styles.layout}>
       <header>
         sdsa
       </header>
       
-      <section className={styles.InputArea} >
+      <section className={styles.InputArea} id="input"
+         >
         <InputArea>
-          <Text />
+        <Text />
         </InputArea>
       </section>
-
+      
+      
       <section className={styles.ParseArea}>
-        sdadadasdad
+        {Math.PI}
       </section>
 
       <section className={styles.BoardArea}>
