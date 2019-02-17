@@ -1,0 +1,4 @@
+Heading — https://fonts.google.com/specimen/Candal
+
+h1.1, h2, section.choose — #FBFAFA
+h1.2, button.2, text — #0C0C0C
