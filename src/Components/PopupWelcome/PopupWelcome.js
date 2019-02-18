@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import styles from './WelcomePop.module.css';
+import styles from './popupWelcome.module.css';
 
-function WelcomePop(props) {
+function PopupWelcome(props) {
   return(
     <section className={styles.WelcomeSection}>
       asdasd
@@ -9,4 +9,4 @@ function WelcomePop(props) {
   );
 }
 
-export default WelcomePop;
+export default PopupWelcome;
