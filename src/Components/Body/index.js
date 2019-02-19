@@ -1,1 +1,1 @@
-export { Body } from './Body'ж
+export { Body } from './Body';
