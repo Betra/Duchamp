@@ -1,21 +1,38 @@
 import React, { Component } from 'react';
 import styles from './buttonCutUp.module.css';
 import Button from '../Button/Button';
+import { getRandomInRange } from '../../utils/getRandomInRange';
 
 function ButtonCutUp(props) {
-  const text = 'Hello World, My Name Is Igor. Im from Russia! Do you know it?';
-  const WordsAmount = text.split(" ").length;
+  const text = 'Hello World, My Name Is Igor. Im from Russia! Do you know it?'; //this.value.text in future
+  const WordsAmount = text.split(/ /).length; //Rough amount of words in the text
+  const sentences = text.match( /[^\.!\?]+[\.!\?]+/g ); // returns array with sentences
+  const CutUps = []; 
 
-  //Cut up by sentences:
-  const sentences = text.match( /[^\.!\?]+[\.!\?]+/g ); 
-  // I want to take sentences from text
-  // take random(1, sentence.length) amount of words in it 
-  // These words are compiled as a "Cut Up" and excluded from this sentence
-  // Nice solution?
+  while (sentences.length > 0) { // separate file?
+    let sentence = sentences[0].split(/ /); // array with words of this sentences
+    
+    while (true) {
+      let cutAt = getRandomInRange(1,sentence.length +1); // returns random amount of words in this sentence
+      
+      if (cutAt!=(sentence.length)) { 
+        const CutUp = sentence.splice(0,cutAt);
+        CutUps.push(CutUp.join(' ')); // add the cutup to the array
+        
+       if (sentence.length <= 0) {
+         sentence.shift();
+        } else {
+          break;
+        }
 
-  if (WordsAmount > 3) {
-    //Generate Random amount of word in a current sentence in a cut, from one to full sentences
+      } else {
+        CutUps.push(sentence.join(" "));
+        sentences.shift();
+        break;
+      }
+    }
   }
+
   return(
     <Button
     />
