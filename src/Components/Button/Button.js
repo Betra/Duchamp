@@ -6,7 +6,7 @@ import styles from './button.module.css';
 //
 export function Button(props) {
   return (
-  <button onClick={props.click}>
+  <button onClick={props.handleClick}>
     {props.text}
   </button>
   );
