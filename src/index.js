@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-import Body from './components/Body/Body';
+
+import { Body } from './components/Body';
 
 ReactDOM.render(<Body />, document.getElementById('root'));
 

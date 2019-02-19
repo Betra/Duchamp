@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './Text.module.css';
 const lineHeight = 18;
 
-class Text extends React.Component {
+export class Text extends React.Component {
   constructor(props) {
     super(props);
     this.handleInput = this.handleInput.bind(this);
@@ -44,4 +44,3 @@ class Text extends React.Component {
     );
   }
 }
-export default Text;
