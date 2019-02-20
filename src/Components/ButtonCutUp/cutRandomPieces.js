@@ -19,7 +19,5 @@ export function cutRandomPieces(sentences) {
     }
   }
 
-  return cutUps.filter(function(x){
-    return (x !== (undefined || null || ''));
-  });
+  return cutUps.filter(Boolean);
 }
