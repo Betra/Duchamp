@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import styles from './WelcomePop.module.css';
+import styles from './popupWelcome.module.css';
 
-function WelcomePop(props) {
+export function PopupWelcome(props) {
   return(
     <section className={styles.WelcomeSection}>
       asdasd
     </section>
   );
 }
-
-export default WelcomePop;

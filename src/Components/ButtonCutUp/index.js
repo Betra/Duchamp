@@ -1,0 +1,1 @@
+export { ButtonCutUp } from './ButtonCutUp';

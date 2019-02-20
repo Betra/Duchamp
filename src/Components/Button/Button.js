@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import styles from './button.module.css';
 
-function Button(props) {
-  
+//
+// <Button click={} text={}/>
+//
+export function Button(props) {
+  return (
+  <button onClick={props.handleClick}>
+    {props.text}
+  </button>
+  );
 }
-
-
-export default Button;
