@@ -1,5 +1,7 @@
-import React, { Component } from 'react';
-import styles from './Text.module.css';
+import React from 'react';
+import styles from './text.module.css';
+import { getRandomPlaceholder} from '../../utils';
+
 const lineHeight = 18;
 
 export class Text extends React.Component {
@@ -7,7 +9,7 @@ export class Text extends React.Component {
     super(props);
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {text: '', rows: 1 };
+    this.state = {/*text: '',*/ rows: 1 };
   }
 
   handleInput(event) { 
@@ -17,9 +19,11 @@ export class Text extends React.Component {
 
     if (newRows === oldRows) { event.target.rows = newRows; }
     this.setState({
-      text: event.target.value,
+      /*text: event.target.value, */
       rows: newRows
     });
+
+    this.props.onTextChange(event.target.value);
   }
 
   handleSubmit(event) {
@@ -28,19 +32,16 @@ export class Text extends React.Component {
   }
 
   render() {
+    const text = this.props.text;
     return (
-        <form onSubmit={this.handleSubmit}>
           <textarea autoFocus
             rows={this.state.rows}
             className={styles.inputArea} 
-            value={this.state.text} 
+            value={text} 
             onChange={this.handleInput}
             style={{lineHeight: `${lineHeight}px`}}
-            placeholder='Insert your text here' 
+            placeholder={getRandomPlaceholder()} 
           />
-          <br />
-          <input type ="submit" />
-        </form>
     );
   }
 }

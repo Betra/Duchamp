@@ -4,18 +4,12 @@ import globalStyles from '../../CSS/global.css';
 
 import { PopupWelcome } from '../PopupWelcome/';
 import { Button } from '../Button';
-import { ButtonCutUp } from '../ButtonCutUp';
-import { Paper } from '../GenerateTornPaperPiece';
+import { Text } from '../Text'; 
 
 export function Body() {
   return(
     <main>
-      
-      <h1>Hello</h1>
-      <ButtonCutUp />   
-      <Button text="Hey"/>
-      <PopupWelcome  /> 
-
+      <Text />
     </main>
   );
 }
