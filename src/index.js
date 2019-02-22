@@ -12,22 +12,28 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
     this.handleTextChange = this.handleTextChange.bind(this);
-    this.state = {text: '', submitted: false};
+    this.handleClick = this.handleClick.bind(this);
+    this.state = {text: '', showPaper: false};
   }
 
   handleTextChange = val => this.setState({text: val});
+
+  handleClick(text) {
+    this.renderCutups(text)
+    
+  }
 
   renderCutups(text) {
     let cutUps = cutRandomPieces(text);
     cutUps = shuffleArray(cutUps);
     alert(cutUps);
   }
-
+  
   render() {
     return (
       <div>
         <Text onTextChange={this.handleTextChange} text={this.state.text}/>
-        <ButtonCutUp onClick={this.renderCutups} text={this.state.text}/>
+        <ButtonCutUp onClick={this.handleClick} text={this.state.text}/>
       </div>
     )
   }

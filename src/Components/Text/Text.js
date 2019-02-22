@@ -9,7 +9,7 @@ export class Text extends React.Component {
     super(props);
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = {/*text: '',*/ rows: 1 };
+    this.state = { rows: 1 };
   }
 
   handleInput(event) { 
@@ -18,10 +18,7 @@ export class Text extends React.Component {
     const newRows = ~~(event.target.scrollHeight/lineHeight);
 
     if (newRows === oldRows) { event.target.rows = newRows; }
-    this.setState({
-      /*text: event.target.value, */
-      rows: newRows
-    });
+    this.setState({rows: newRows});
 
     this.props.onTextChange(event.target.value);
   }
