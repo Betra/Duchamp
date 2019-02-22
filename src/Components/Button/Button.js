@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styles from './button.module.css';
+import React from 'react';
+//import styles from './button.module.css';
 
 //
 // <Button click={} text={}/>
