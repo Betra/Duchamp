@@ -5,6 +5,7 @@ import * as serviceWorker from './serviceWorker';
 //import { Body } from './components/Body';
 import { Text } from './components/Text';
 import { ButtonCutUp, cutRandomPieces } from './components/ButtonCutUp';
+import {  shuffleArray } from './utils'
 
 
 class Form extends React.Component {
@@ -17,7 +18,8 @@ class Form extends React.Component {
   handleTextChange = val => this.setState({text: val});
 
   renderCutups(text) {
-    const cutUps = cutRandomPieces(text);
+    let cutUps = cutRandomPieces(text);
+    cutUps = shuffleArray(cutUps);
     alert(cutUps);
   }
 
