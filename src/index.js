@@ -4,7 +4,7 @@ import * as serviceWorker from './serviceWorker';
 
 //import { Body } from './components/Body';
 import { Text } from './components/Text';
-import { ButtonCutUp, cutRandomPieces } from './components/ButtonCutUp';
+import { ButtonCutUp, cutRandomPieces } from './Components/ButtonCutUp';
 import {  shuffleArray } from './utils'
 
 
