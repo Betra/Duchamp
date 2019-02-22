@@ -1,8 +1,9 @@
 import { getRandomInRange } from '../../utils';
 
 export function cutRandomPieces(text) {
-  // Bug with 0 sentences
-  let sentences = text.match( /[^\.!\?]+[\.!\?]+/g );
+  text.match(/[!.?]/) ? text = String(text) : text += '.';
+  
+  const sentences = text.match( /[^.!?]+[.!?]+/g );
 
   const cutUps = []; 
 
