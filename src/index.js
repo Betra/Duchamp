@@ -24,7 +24,7 @@ class Form extends React.Component {
   render() {
     return (
       <div>
-        <Text onTextChange={this.handleTextChange}/>
+        <Text onTextChange={this.handleTextChange} text={this.state.text}/>
         <ButtonCutUp onClick={this.renderCutups} text={this.state.text}/>
       </div>
     )

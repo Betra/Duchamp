@@ -32,7 +32,7 @@ export class Text extends React.Component {
   }
 
   render() {
-    const text = this.props.text;
+    const { text } = this.props;
     return (
           <textarea autoFocus
             rows={this.state.rows}
