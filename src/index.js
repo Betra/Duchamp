@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
 
-//import { Body } from './components/Body';
-import { Text } from './components/Text';
-import { ButtonCutUp, cutRandomPieces } from './Components/ButtonCutUp';
+//import { Body } from './сomponents/Body';
+import { Text } from './Сomponents/Text';
+import { ButtonCutUp, cutRandomPieces } from './Сomponents/ButtonCutUp';
 import {  shuffleArray } from './utils'
 
 
