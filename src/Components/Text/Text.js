@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './text.module.css';
+import styles from './Text.module.css';
 import { getRandomPlaceholder} from '../../utils';
 
 const lineHeight = 18;
