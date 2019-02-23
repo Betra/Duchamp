@@ -2,6 +2,7 @@ import { getRandomInRange } from '../../utils';
 
 export function cutRandomPieces(text) {
   
+  if (text === '' || null || undefined) return "";
   text.match(/[!.?]$/) ? text = String(text) : text += '.';
   text = text.replace(/[\r\n]+/, '')
   

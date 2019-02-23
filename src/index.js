@@ -33,7 +33,7 @@ class Form extends React.Component {
     return (
       <div>
         <Text onTextChange={this.handleTextChange} text={this.state.text}/>
-        <ButtonCutUp onClick={this.handleClick} text={this.state.text}/>
+        <ButtonCutUp onClick={this.handleClick} text={this.state.text} disabledOn={!this.state.text}/>
       </div>
     )
   }
