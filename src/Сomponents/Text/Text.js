@@ -8,7 +8,6 @@ export class Text extends React.Component {
   constructor(props) {
     super(props);
     this.handleInput = this.handleInput.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = { rows: 1 };
   }
 
@@ -21,11 +20,6 @@ export class Text extends React.Component {
     this.setState({rows: newRows});
 
     this.props.onTextChange(event.target.value);
-  }
-
-  handleSubmit(event) {
-      alert(this.state.text);
-      event.preventDefault();
   }
 
   render() {
