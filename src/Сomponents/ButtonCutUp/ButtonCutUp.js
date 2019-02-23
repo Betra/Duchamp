@@ -18,11 +18,10 @@ export class ButtonCutUp extends React.Component {
     return (
       <button 
         onClick={this.handleClick} 
-        text={this.props.text}>
+        text={this.props.text}
+        disabled={this.props.disabledOn} >
         Cut Up!
       </button>
     );
   }
 }
-
-
