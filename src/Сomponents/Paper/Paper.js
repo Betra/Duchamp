@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styles from './Paper.module.css';
 
 // <Paper cut={true} ragged={false} > </Paper>
