@@ -1,7 +1,6 @@
 button {
   min-width: 60px;
   color: inherit;
-  
 }
 
 button:disabled, button[disabled=disabled] {

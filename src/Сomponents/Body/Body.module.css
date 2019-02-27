@@ -1,9 +1,0 @@
-body {
-  background: #f4f4f4;
-}
-
-#sections {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-}
