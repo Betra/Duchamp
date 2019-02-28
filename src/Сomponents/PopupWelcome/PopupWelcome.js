@@ -1,10 +1,17 @@
-import React, { Component } from 'react';
-import styles from './popupWelcome.module.css';
+import React from 'react';
 
-export function PopupWelcome(props) {
-  return(
-    <section className={styles.WelcomeSection}>
-      asdasd
-    </section>
-  );
+import { Header} from "../Header";
+import { Description } from "../Description";
+import { MethodChoice } from "../MethodChoice";
+import { Footer } from "../Footer";
+
+export function PopupWelcome() {
+    return(
+      <main className="wrapper">
+        <Header />
+        <Description />
+        <MethodChoice />
+        <Footer />
+      </main>
+    );
 }
