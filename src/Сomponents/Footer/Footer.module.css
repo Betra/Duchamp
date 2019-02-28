@@ -1,6 +1,6 @@
 .footer {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-around;
   background: #3e3e3e;
   color: #7e7e7e;

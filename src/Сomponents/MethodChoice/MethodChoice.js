@@ -11,7 +11,7 @@ import styles from "./MethodChoice.module.css";
 
 export function MethodChoice () {
   return(
-    <main className="choices">
+    <main className={styles.choices}>
       <Section icon={folder}>Paste your text</Section>
       <Section icon={wiki}>Random article from <b>Wikipedia</b></Section>
       <Section icon={nyt}>Random article from <b>NY Times</b></Section>
