@@ -2,12 +2,17 @@ import React from "react";
 
 
 import { PopupWelcome } from "../PopupWelcome";
-import { PopupInput } from "../PopupInput";
+
+import { Link } from 'react-router-dom';
+
+import { Main } from '../Main';
 
 export class Body extends React.Component {
   render() {
     return(
-      <PopupWelcome />
+      <Main />
+      /*<PopupWelcome />
+      <Link to="/">YE</Link>*/
     );
   }
 }
