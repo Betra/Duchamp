@@ -1,12 +1,14 @@
 import React from 'react';
 import styles from "./Header.module.css";
 
-export function Header() {
-  return (
-    <header className={styles.header}>
-      <h1>
+import { Link } from 'react-router-dom';
+
+export const Header = () => (
+  <header className={styles.header}>
+    <h1>
+      <Link to="/">
         Duchamp it
-      </h1> 
-    </header>
-  );
-}
+      </Link>
+    </h1> 
+  </header>
+);

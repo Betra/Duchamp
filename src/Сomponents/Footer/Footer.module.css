@@ -1,9 +1,13 @@
 .footer {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
   background: #3e3e3e;
   color: #7e7e7e;
-  padding: 1.8rem;
-  font-size: 0.9em;
+
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  flex: 0 0 auto;
+
+  margin: 0 -2rem;
+  padding: 1.6rem 0.5rem;
+  font-size: 0.8rem;
 }

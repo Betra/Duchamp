@@ -1,0 +1,1 @@
+export { BodyBeginner } from './BodyBeginner'

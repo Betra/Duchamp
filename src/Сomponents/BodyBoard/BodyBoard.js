@@ -1,13 +1,12 @@
 import React from 'react';
-//import styles from './popupInput.module.css';
+import styles from './BodyBoard.module.css';
 
 import { Form } from "../Form";
 import { Paper} from "../Paper";
 
-export class PopupInput extends React.Component {
+export class BodyBoard extends React.Component {
   constructor(props) {
     super(props);
-    this.handleCutUpArray = this.handleCutUpArray.bind(this);
     this.state = {cutUps: []};
   }
 
@@ -16,9 +15,12 @@ export class PopupInput extends React.Component {
   render() {
     const { cutUps } = this.state;
     return(
-      <main>
+      <main className={styles.input}>
         <Form onSubmit={this.handleCutUpArray}/>
-        {cutUps.map((cutUp)=> <Paper>{cutUp}</Paper>)}
+        
+        <section className={styles.Board}>
+          {cutUps.map((cutUp, id)=> <Paper key={id} >{cutUp}</Paper>)}
+        </section>
       </main>
     );
   }

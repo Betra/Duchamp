@@ -22,7 +22,18 @@ html, body, main.wrapper{
   color: #252525;
 }
 
-header, h2 {
-  /*  Temporary */
+main.wrapper {
   padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+}
+
+a {
+  color: #252525;
+  text-decoration: none;
+  font-family: system-ui;
+}
+
+a:hover {
+  color: #6ca231;
 }

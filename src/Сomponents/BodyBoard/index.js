@@ -1,0 +1,1 @@
+export { BodyBoard } from './BodyBoard';

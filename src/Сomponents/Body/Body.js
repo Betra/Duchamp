@@ -1,18 +1,15 @@
 import React from "react";
 
-
-import { PopupWelcome } from "../PopupWelcome";
-
-import { Link } from 'react-router-dom';
-
+import { Header} from "../Header";
 import { Main } from '../Main';
+import { Footer } from "../Footer";
+import { Description } from "../Description";
 
-export class Body extends React.Component {
-  render() {
-    return(
-      <Main />
-      /*<PopupWelcome />
-      <Link to="/">YE</Link>*/
-    );
-  }
-}
+export const Body = () => (
+  <main className="wrapper">
+    <Header />
+    <Description />
+    <Main />
+    <Footer />
+  </main>
+);

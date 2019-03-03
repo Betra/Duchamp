@@ -1,6 +1,11 @@
+
 .description {
-  margin-top: -1.8em;
+  flex: 0 1 auto;
+  display: flex;
+  justify-content: baseline;
+  align-items: center;
 }
+
 .description h2 {
   font-weight: 100; 
   font-size: 1.3rem;
