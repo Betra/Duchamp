@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './Button.module.css';
+import styles from './button.module.css';
 
 export const Button = ({onClick, disabled, text, value}) => (
   <button onClick={onClick}
