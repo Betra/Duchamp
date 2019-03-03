@@ -8,7 +8,7 @@ import { BodyAbout } from '../BodyAbout';
 import { BodyBeginner } from '../BodyBeginner';
 
 export const Main = () => (
-    <main style= {{flex: '1 0 auto'}}>
+    <main style={{flex: '1 0 auto'}}>
       <Switch>
         <Route exact path='/' component={BodyWelcome} />
         <Route exact path='/input' component={BodyBoard} />
