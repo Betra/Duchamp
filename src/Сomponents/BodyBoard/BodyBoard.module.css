@@ -1,4 +1,4 @@
-.Board {
+.board {
   display: flex;
   max-width: 100%;
   flex-flow: row wrap;

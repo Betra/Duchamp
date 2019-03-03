@@ -18,7 +18,7 @@ export class BodyBoard extends React.Component {
       <main className={styles.input}>
         <Form onSubmit={this.handleCutUpArray}/>
         
-        <section className={styles.Board}>
+        <section className={styles.board}>
           {cutUps.map((cutUp, id)=> <Paper key={id} >{cutUp}</Paper>)}
         </section>
       </main>
