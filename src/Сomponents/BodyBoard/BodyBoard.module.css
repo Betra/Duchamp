@@ -1,6 +1,5 @@
 .board {
-  display: flex;
-  max-width: 100%;
-  flex-flow: row wrap;
-  margin: 0.8em;
+	display: flex;
+	flex-flow: row wrap;
+  max-width:100%;
 }

@@ -1,12 +1,16 @@
 .paper{
-  background: white;
-  max-width: 20%;
-  padding: 1em;
+  background: #ffffff;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+
+  flex: 1 0 auto;
+  overflow:hidden;
+
   position: relative;
-  width: min-content;
-  box-shadow: 0 3px 5px rgba(0,0,0,0.05);
-  margin: 0.3em;
-  margin-bottom: 1em;
+  box-sizing: border-box;
+  padding: 1em;
+  margin: 0.8em;
+  margin-bottom: 0.3em;
+  max-width: 100%;
 }
   
 .paper::after {
