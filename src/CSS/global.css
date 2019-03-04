@@ -13,10 +13,6 @@ html, body, main.wrapper{
   margin: 0;
   padding: 0;
 
-  display: flex;
-  justify-content: space-between;
-  flex-flow: column nowrap;
-
   background: #f4f4f4;
   font-family: system-ui;
   color: #252525;
@@ -26,6 +22,9 @@ main.wrapper {
   padding-left: 2rem;
   padding-right: 2rem;
   box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column nowrap;
 }
 
 a {

@@ -1,6 +1,6 @@
 
 .description {
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   display: flex;
   justify-content: baseline;
   align-items: center;

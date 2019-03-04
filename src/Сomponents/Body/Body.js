@@ -6,7 +6,7 @@ import { Footer } from "../Footer";
 import { Description } from "../Description";
 
 export const Body = () => (
-  <main className="wrapper">
+  <main className="wrapper" id="wrapper">
     <Header />
     <Description />
     <Main />
