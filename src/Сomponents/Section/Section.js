@@ -1,12 +1,12 @@
 import React from 'react';
-import './Section.css';
+import styles from './Section.module.css';
 
 export function Section(props) {
   
   return (
-    <section className="option">
+    <section className={styles.option}>
     <img src={props.icon} alt="Icon" width={32} />
-      <span className='option__text'>{props.children}</span>
+      <span className={styles.optionText}>{props.children}</span>
     </section>
   );
 }

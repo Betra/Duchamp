@@ -4,7 +4,7 @@ import { Text } from '../Text';
 import { ButtonCutUp, cutRandomPieces } from '../ButtonCutUp';
 import { shuffleArray } from '../../utils';
 
-import './Form.module.css';
+import styles from './Form.module.css';
 
 export class Form extends React.Component {
   constructor(props) {
@@ -29,7 +29,7 @@ export class Form extends React.Component {
   
   render() {
     return (
-      <section className="formInput">
+      <section className={styles.formInput}>
         <Text onTextChange={this.handleTextChange} text={this.state.text}/>
         <ButtonCutUp onClick={this.handleClick} text={this.state.text} disabledOn={!this.state.text}/>
       </section>

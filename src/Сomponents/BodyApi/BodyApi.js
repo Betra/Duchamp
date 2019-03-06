@@ -1,5 +1,5 @@
 import React from 'react';
-import './BodyApi.css';
+import styles from './BodyApi.module.css';
 import { ParsedApiPage } from '../ParsedApiPage';
 
 import { getRandomWikiArticle } from '../../utils';
@@ -32,7 +32,7 @@ export class BodyApi extends React.Component {
     } else {
       return (
         <main>
-          <section className="contentApi">
+          <section className={styles.contentApi}>
             <ParsedApiPage
               link={"https://en.wikipedia.org/wiki/"+article.title}
               title={article.title}

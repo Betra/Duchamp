@@ -13,20 +13,20 @@
   align-items: flex-start;
 }
 
-.suggestion--text {
+.suggestionText {
   width: 66%;
 }
 
-.suggestion--image {
+.suggestionImage {
   width: 33%;
   padding-right: 1rem;
 }
-.suggestion--image img {
+.suggestionImage img {
   max-width:100%;
   height: auto;
 }
 
-.suggestion--header {
+.suggestionHeader {
   font-weight: bold;
   padding-bottom: 1rem;
 }

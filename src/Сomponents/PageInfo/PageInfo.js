@@ -1,8 +1,8 @@
 import React from 'react';
-import './PageInfo.module.css';
+import styles from './PageInfo.module.css';
 
 export const PageInfo = (props) => (
-  <section className="info">
+  <section className={styles.info}>
     <h1>
       {props.header}
     </h1>
