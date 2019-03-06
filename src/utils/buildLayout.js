@@ -7,10 +7,10 @@ export function buildLayout(parent,cols) {
     col_heights.push(0);
   }
 
-  for (var i = 0; i < container.children.length; i++) {
-    var order = (i + 1) % COL_COUNT || COL_COUNT;
-    container.children[i].style.order = order;
-    col_heights[order] += parseFloat(container.children[i].style.height);
+  for (var j = 0; j < container.children.length; j++) {
+    var order = (j + 1) % COL_COUNT || COL_COUNT;
+    container.children[j].style.order = order;
+    col_heights[order] += parseFloat(container.children[j].style.height);
   }
   // var highest = Math.max.apply(Math, col_heights);
   // container.style.height = highest+'px';
