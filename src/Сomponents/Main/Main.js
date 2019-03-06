@@ -12,9 +12,7 @@ export const Main = () => (
       <Switch>
         <Route exact path='/' component={BodyWelcome} />
         <Route exact path='/input' component={BodyBoard} />
-        <Route exact path='/api?Wiki' component={BodyApi} />
-        <Route exact path='/api?NYT' component={BodyApi} />
-        <Route exact path='/api?Meduza' component={BodyApi} />
+        <Route exact path='/api' component={BodyApi} />
         <Route exact path='/about' component={BodyAbout} />
         <Route exact path='/beginner' component={BodyBeginner} />
       </Switch>

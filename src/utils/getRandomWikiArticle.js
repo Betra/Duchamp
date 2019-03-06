@@ -11,17 +11,23 @@ export async function getRandomWikiArticle() {
     'action'        : 'query',
     'generator'     : 'random',
     'grnnamespace'  : '0',
-    'prop'          : 'extracts',
-    'exchars'       : '500'
+    'prop'          : 'pageimages|extracts',
+    'piprop'        : 'original',
+    'exintro'       : '1',
+    'exsentences'   : '2',
+    'explaintext'   : '1'
   });
 
   let request = proxyUrl + wikiUrl + query;
   
   const response =  await fetch(request);
-  const data = await response.json();
+  const data = await response.json()
+
   const page = convertJsonToArray(data.query.pages);
-  
-  console.log(page[0]);
+  const pageArray = convertJsonToArray(page[0]);
+
+  let hasImg = pageArray.length === 5 ? true : false;
+  page[0]['hasImg'] = hasImg;
 
   return page[0];
 }

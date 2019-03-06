@@ -20,21 +20,28 @@ export class BodyApi extends React.Component {
 
   render() {
     const { article } = this.state;
+    const image = article.hasImg ? article.original.source : '';
+
     if (!this.state.isLoaded) {
-      return ( <span> Fetching Data</span>)
+      return (//Animation and improvement next time
+        <main><section className="contentApi">
+          <ParsedApiPage brief='Choosing article...' />
+        </section></main>
+      );
+
     } else {
       return (
-        <main >
+        <main>
           <section className="contentApi">
             <ParsedApiPage
-              link=""
+              link={"https://en.wikipedia.org/wiki/"+article.title}
               title={article.title}
               brief={article.extract}
-              imageUrl=""
+              imageUrl={image}
             />
           </section>
         </main>
       );
-      }
+    }
   }
 }

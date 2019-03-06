@@ -3,9 +3,11 @@ import './ParsedApiPage.css';
 
 export const ParsedApiPage  = props => (
   <section className="suggestion">
-    <a href={props.link} className="suggestion--image">
-      <img src={props.imageUrl} alt={props.title}  />
-    </a>
+    {props.imageUrl !== '' &&
+      <a href={props.link} className="suggestion--image">
+        <img src={props.imageUrl} alt={props.title}  />
+      </a>
+    }
     
     <section className="suggestion--text">
       <section className="suggestion--header">
