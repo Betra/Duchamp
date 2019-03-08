@@ -5,6 +5,6 @@ export function parseQuery(query) {
     search += key+'='+query[key]+'&';
   }
 
-  search = search.substring(0, search.length - 1);
+  search.substring(0, search.length - 1);
   return search;
 }
