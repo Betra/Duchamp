@@ -1,0 +1,1 @@
+export { BodyWelcome } from './BodyWelcome';

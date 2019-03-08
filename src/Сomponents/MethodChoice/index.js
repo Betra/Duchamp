@@ -1,1 +1,0 @@
-export { MethodChoice } from './MethodChoice';

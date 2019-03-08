@@ -2,24 +2,20 @@
   --inputBackground: #cccccc;
 }
 
-.inputArea {
-  background: var(--inputBackground);
+textarea.inputArea {
+  background: #fff;
   width: 100%;
   padding: 20px 20px 20px 20px;
   box-sizing: border-box;
-  outline: none;
-  resize: none;
-  height: 100%;
-  min-height: 100%;
- 
-}
+  border-radius: 1rem;
 
-textarea {
-  border: none;
-  color: inherit;
+  outline: none;
+  overflow-y: scroll;
   font-size: inherit;
+  resize: none;
+  border: none;
 }
 
 ::-webkit-input-placeholder { 
-  color: inherit;
+  color: #aaa;
 }

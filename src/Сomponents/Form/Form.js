@@ -1,7 +1,10 @@
 import React from 'react';
+
 import { Text } from '../Text';
 import { ButtonCutUp, cutRandomPieces } from '../ButtonCutUp';
-import {  shuffleArray } from '../../utils'
+import { shuffleArray } from '../../utils';
+
+import './Form.module.css';
 
 export class Form extends React.Component {
   constructor(props) {
@@ -26,10 +29,10 @@ export class Form extends React.Component {
   
   render() {
     return (
-      <div>
+      <section className="formInput">
         <Text onTextChange={this.handleTextChange} text={this.state.text}/>
         <ButtonCutUp onClick={this.handleClick} text={this.state.text} disabledOn={!this.state.text}/>
-      </div>
+      </section>
     )
   }
 }

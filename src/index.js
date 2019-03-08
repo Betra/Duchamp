@@ -4,7 +4,8 @@ import * as serviceWorker from './serviceWorker';
 
 import './CSS/global.css';
 import { Body } from './Сomponents/Body';
+import { BrowserRouter } from 'react-router-dom';
 
-ReactDOM.render(<Body />, document.getElementById('root'));
+ReactDOM.render(<BrowserRouter><Body /></BrowserRouter>, document.getElementById('root'));
 
 serviceWorker.unregister();

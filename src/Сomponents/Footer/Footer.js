@@ -1,13 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import styles from "./Footer.module.css";
 
-export function Footer() {
-
-  return(
-    <footer className={styles.footer}>
-      <span>About</span>
-      <span>What's Cut Up?</span>
-      <span>Open Source</span>
-    </footer>
-  );
-}
+export const Footer = () => (
+  <footer className={styles.footer}>
+    <Link to='/about'>About</Link>
+    
+    <Link  to='/beginner'>What's Cut Up?</Link>
+    
+    <a href="https://github.com/Betra/duchamp-it-up"
+       target="_blank" 
+       rel='noopener noreferrer'>
+        Open Source
+    </a>
+  </footer>
+);

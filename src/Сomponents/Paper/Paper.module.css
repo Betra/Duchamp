@@ -1,10 +1,15 @@
 .paper{
-  background: white;
-  max-width: 20%;
-  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+
+  flex: 1 0 auto;
+  overflow:hidden;
+
   position: relative;
-  width: min-content;
-  box-shadow: 0 3px 5px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+  padding: 1em;
+  margin: 0.8em 1.6em 0.3em 0;
+  max-width: 100%;
 }
   
 .paper::after {
