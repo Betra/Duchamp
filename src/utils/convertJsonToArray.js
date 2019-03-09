@@ -1,8 +1,8 @@
-export function convertJsonToArray(json){
-  var result = [];
-  var keys = Object.keys(json);
-  keys.forEach(function(key){
-      result.push(json[key]);
+export const convertJsonToArray = json => {
+  const result = [];
+  const keys = Object.keys(json);
+  keys.forEach(function(key) {
+    result.push(json[key]);
   });
   return result;
-}
+};

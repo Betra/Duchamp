@@ -1,1 +1,1 @@
-export { BodyAbout } from './BodyAbout';
+export { BodyAbout } from "./BodyAbout";

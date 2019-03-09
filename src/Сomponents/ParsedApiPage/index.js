@@ -1,1 +1,1 @@
-export { ParsedApiPage } from './ParsedApiPage';
+export { ParsedApiPage } from "./ParsedApiPage";

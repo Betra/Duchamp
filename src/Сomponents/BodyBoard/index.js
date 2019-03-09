@@ -1,1 +1,1 @@
-export { BodyBoard } from './BodyBoard';
+export { BodyBoard } from "./BodyBoard";

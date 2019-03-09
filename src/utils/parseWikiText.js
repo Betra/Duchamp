@@ -1,1 +1,1 @@
-export const parseWikiText = text => text.replace(/=/g,'');
+export const parseWikiText = text => text.replace(/=/g, "");

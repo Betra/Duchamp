@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 //import styles from './buttonCutUp.module.css';
 
-import { Button } from '../Button';
+import { Button } from "../Button";
 
 export class ButtonCutUp extends React.Component {
   constructor(props) {
@@ -16,12 +16,12 @@ export class ButtonCutUp extends React.Component {
 
   render() {
     return (
-      <Button 
-        onClick={this.handleClick} 
+      <Button
+        onClick={this.handleClick}
         text={this.props.text}
         disabled={this.props.disabledOn}
         value="Cut Up!"
-        />
+      />
     );
   }
 }

@@ -1,6 +1,4 @@
-import React, { Component } from 'react';
-import styles from './popupHint.module.css';
+import React, { Component } from "react";
+import styles from "./popupHint.module.css";
 
-export function PopupHint(props) {
-  
-}
+export const PopupHint = props => {};
