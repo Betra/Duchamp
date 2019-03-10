@@ -1,13 +1,19 @@
-import React from 'react';
+import React from "react";
 
-import styles from './button.module.css';
+import styles from "./button.module.css";
 
-export const Button = ({onClick, disabled, text, value}) => (
-  <button onClick={onClick}
-          disabled={disabled}
-          text={text}
-          className={styles.button}>
+export const Button = ({
+  onClick,
+  text,
+  value = "Cut Up!",
+  disabled = false
+}) => (
+  <button
+    onClick={onClick}
+    disabled={disabled}
+    text={text}
+    className={styles.button}
+  >
     {value}
   </button>
 );
-

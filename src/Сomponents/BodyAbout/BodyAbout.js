@@ -1,5 +1,6 @@
-import React from 'react';
-import { PageInfo } from '../PageInfo/PageInfo';
+import React from "react";
+
+import { PageInfo } from "../PageInfo/PageInfo";
 
 export const BodyAbout = () => (
   <PageInfo header="About">

@@ -1,2 +1,2 @@
-export { ButtonCutUp } from './ButtonCutUp';
-export { cutRandomPieces } from './cutRandomPieces';
+export { ButtonCutUp } from "./ButtonCutUp";
+export { cutRandomPieces } from "./cutRandomPieces";
