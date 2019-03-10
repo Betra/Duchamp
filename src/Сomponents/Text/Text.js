@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import styles from './text.module.css';
-import { getRandomPlaceholder} from '../../utils';
+import styles from "./text.module.css";
+import { getRandomPlaceholder } from "../../utils";
 
 const lineHeight = 18;
 
@@ -12,7 +12,7 @@ export class Text extends React.Component {
     this.state = { rows: 6 };
   }
 
-  handleInput(event) { 
+  handleInput(event) {
     // const oldRows = event.target.rows;
     // event.target.rows = 1;
     // const newRows = ~~(event.target.scrollHeight/lineHeight);
@@ -27,14 +27,15 @@ export class Text extends React.Component {
     const { text } = this.props;
 
     return (
-          <textarea autoFocus
-            rows={this.state.rows}
-            className={styles.inputArea} 
-            value={text} 
-            onChange={this.handleInput}
-            style={{lineHeight: `${lineHeight}px`}}
-            placeholder={getRandomPlaceholder()} 
-          />
+      <textarea
+        autoFocus
+        rows={this.state.rows}
+        className={styles.inputArea}
+        value={text}
+        onChange={this.handleInput}
+        style={{ lineHeight: `${lineHeight}px` }}
+        placeholder={getRandomPlaceholder()}
+      />
     );
   }
 }

@@ -1,17 +1,16 @@
-import React from 'react';
-import styles from './Paper.module.css';
+import React from "react";
+import styles from "./Paper.module.css";
 
 // <Paper cut={true} ragged={false} > </Paper>
 export function Paper(props) {
-  if (((props.cut || props.ragged) && props.cut !== props.ragged) && props.ragged === true) {
+  if (
+    (props.cut || props.ragged) &&
+    props.cut !== props.ragged &&
+    props.ragged === true
+  ) {
     //Case Ragged
-  }
-  else {
+  } else {
     //Case Cut
-    return (
-      <div className={styles.paper} >
-       {props.children}
-      </div>
-    );
+    return <div className={styles.paper}>{props.children}</div>;
   }
 }

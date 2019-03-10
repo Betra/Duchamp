@@ -1,32 +1,31 @@
-import { getRandomInRange } from '../../utils';
+import { getRandomInRange } from "../../utils";
 
 export function cutRandomPieces(text) {
-  
-  if (text === '' || null || undefined) return "";
-  text.match(/[!.?]$/) ? text = String(text) : text += '.';
-  text = text.replace(/[\r\n]+/, '')
-  
-  
-  const sentences = text.match( /[^.!?]+[.!?]+/g );
+  if (!text) return "";
 
-  const cutUps = []; 
+  text.match(/[!.?]$/) ? (text = String(text)) : (text += ".");
+  text = text.replace(/[\r\n]+/, "");
 
-    while (sentences.length > 0) {
-      let sentence = sentences[0].split(/ /); // array with words of this sentences
-      
-      while (true) {
-        let wordsInCutUp = getRandomInRange(1,sentence.length+1); // returns random amount of words in this sentence
-        let cutUp = sentence.splice(0,wordsInCutUp);
-    
+  const sentences = text.match(/[^.!?]+[.!?]+/g);
 
-        cutUp = cutUp.join(' ');
-        cutUps.push(cutUp); // add the cutup to the array
-      
+  const cutUps = [];
 
-        if (sentence.length === 0) { sentences.shift(); break;}
+  while (sentences.length > 0) {
+    let sentence = sentences[0].split(/ /); // array with words of this sentences
+
+    while (true) {
+      let wordsInCutUp = getRandomInRange(1, sentence.length + 1); // returns random amount of words in this sentence
+      let cutUp = sentence.splice(0, wordsInCutUp);
+
+      cutUp = cutUp.join(" ");
+      cutUps.push(cutUp); // add the cutup to the array
+
+      if (sentence.length === 0) {
+        sentences.shift();
+        break;
       }
     }
-
+  }
 
   return cutUps.filter(Boolean);
 }

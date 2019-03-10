@@ -1,1 +1,1 @@
-export { PageInfo } from './PageInfo';
+export { PageInfo } from "./PageInfo";

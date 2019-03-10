@@ -1,1 +1,1 @@
-export { BodyWelcome } from './BodyWelcome';
+export { BodyWelcome } from "./BodyWelcome";
