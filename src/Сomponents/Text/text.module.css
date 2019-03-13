@@ -1,0 +1,22 @@
+textarea.inputArea {
+  background: #fbfaf8;
+  box-shadow: 1px 2px 8px 0 rgba(69, 69, 69, 0.2);
+  border-radius: 10px;
+
+  box-sizing: border-box;
+  padding: 3em;
+  width: 100%;
+
+  outline: none;
+  overflow-y: scroll;
+  font-size: inherit;
+  resize: none;
+  border: none;
+
+  line-height: "1.6em";
+  height: 40em;
+}
+
+::-webkit-input-placeholder {
+  color: #aaa;
+}

@@ -1,0 +1,34 @@
+@import "fonts/Avenir.css";
+
+html,
+body,
+main.wrapper {
+  min-height: 100%;
+  height: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+
+  color: #252525;
+  font-family: "Avenir Next Cyr";
+  font-size: 9pt;
+}
+
+main.wrapper {
+  padding: 0 40px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: baseline;
+  flex-flow: column nowrap;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #6013d0;
+}

@@ -1,0 +1,1 @@
+export { BodyAbout } from "./BodyAbout";
