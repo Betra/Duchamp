@@ -9,7 +9,7 @@ import styles from "./Form.module.css";
 export class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { text: "" };
+    this.state = { text: this.props.text ? this.props.text : "" };
   }
 
   handleTextChange = val => this.setState({ text: val });
