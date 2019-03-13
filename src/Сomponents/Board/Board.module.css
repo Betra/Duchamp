@@ -1,9 +1,0 @@
-.board {
-  margin-left: 30px;
-  margin-top: 15px;
-  width: 100%;
-
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-}

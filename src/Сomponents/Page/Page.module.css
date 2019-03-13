@@ -1,7 +1,0 @@
-.page {
-  max-width: 100%;
-
-  display: flex;
-  flex-flow: row nowrap;
-  flex: 1 0 auto;
-}

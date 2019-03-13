@@ -1,1 +1,0 @@
-export { BodyAbout } from "./BodyAbout";
