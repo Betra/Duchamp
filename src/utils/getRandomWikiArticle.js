@@ -21,6 +21,7 @@ export async function getRandomWikiArticle() {
   let request = proxyUrl + wikiUrl + query;
 
   const response = await fetch(request);
+  response.catch(error => console.log(error));
   const data = await response.json();
 
   const page = convertJsonToArray(data.query.pages)[0];

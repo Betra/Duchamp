@@ -1,7 +1,7 @@
 import React from "react";
+
 import styles from "./WikiPage.module.css";
 import { ParsedApiPage } from "../ParsedApiPage";
-
 import { getRandomWikiArticle } from "../../utils";
 import { LoadingApi } from "../LoadingApi";
 import { ButtonCutUp, cutRandomPieces } from "../ButtonCutUp";

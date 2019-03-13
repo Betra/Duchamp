@@ -10,14 +10,17 @@ export const Menu = props => {
   return (
     <main className={styles.choices}>
       <Link to="/">
-        <Section heading="Вставить свой текст" active={url.pathname === "/"} />
+        <Section
+          heading="Вставить свой текст"
+          isActive={url.pathname === "/"}
+        />
       </Link>
 
       <Link to="/wiki">
         <Section
           heading="Википедия"
           description="случайная статья"
-          active={url.pathname === "/wiki"}
+          isActive={url.pathname === "/wiki"}
         />
       </Link>
 
@@ -25,7 +28,7 @@ export const Menu = props => {
         <Section
           heading="Медуза"
           description="случайная новость"
-          active={url.pathname === "/meduza"}
+          isActive={url.pathname === "/meduza"}
         />
       </Link>
 
@@ -33,7 +36,7 @@ export const Menu = props => {
         <Section
           heading="Нью-Йорк Таймс"
           description="случайная новость"
-          active={url.pathname === "/nyt"}
+          isActive={url.pathname === "/nyt"}
         />
       </Link>
     </main>

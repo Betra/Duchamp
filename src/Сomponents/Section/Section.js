@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./Section.module.css";
+import cx from "classnames";
 
-export const Section = ({ active, onClick, heading, description = "" }) => (
+export const Section = ({ isActive, onClick, heading, description = "" }) => (
   <section
-    className={styles.option}
-    id={active && styles.current}
+    className={cx(styles.option, { [styles.activeOption]: isActive })}
     onClick={onClick}
   >
     <span className={styles.heading}>{heading}</span>
