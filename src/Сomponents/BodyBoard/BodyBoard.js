@@ -8,16 +8,13 @@ export class BodyBoard extends React.Component {
     super(props);
     this.state = { cutUps: [] };
   }
-
   handleCutUpArray = cutUpArray => this.setState({ cutUps: cutUpArray });
 
   render() {
-    const { cutUps } = this.state;
-
     return (
       <main>
         <Form onSubmit={this.handleCutUpArray} />
-        <PaperList cutUps={cutUps} />
+        <PaperList cutUps={this.state.cutUps} />
       </main>
     );
   }

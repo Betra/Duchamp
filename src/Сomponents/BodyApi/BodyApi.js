@@ -23,23 +23,17 @@ export class BodyApi extends React.Component {
     const { article } = this.state;
     const image = article.hasImg ? article.original.source : "";
 
-    if (!this.state.isLoaded) {
+    if (!this.state.isLoaded) return <LoadingApi />;
+    else {
       return (
-        //Animation and improvement next time
-        <LoadingApi />
-      );
-    } else {
-      return (
-        <main>
-          <section className={styles.contentApi}>
-            <ParsedApiPage
-              link={"https://en.wikipedia.org/wiki/" + article.title}
-              title={article.title}
-              brief={article.extract}
-              imageUrl={image}
-            />
-          </section>
-        </main>
+        <section className={styles.contentApi}>
+          <ParsedApiPage
+            link={"https://en.wikipedia.org/wiki/" + article.title}
+            title={article.title}
+            brief={article.extract}
+            imageUrl={image}
+          />
+        </section>
       );
     }
   }
