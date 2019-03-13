@@ -1,11 +1,14 @@
-.description {
-  flex: 0 0 auto;
-  display: flex;
-  justify-content: baseline;
-  align-items: center;
-}
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:100&subset=cyrillic");
 
-.description h2 {
-  font-weight: 100;
-  font-size: 1.3rem;
+.description {
+  margin-top: 20px;
+  height: 1.5em;
+
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+
+  color: #6d7278;
+  font-size: 1.5em;
+  font-family: "PT Serif", serif;
 }

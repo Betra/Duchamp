@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./BodyApi.module.css";
+import styles from "./WikiPage.module.css";
 import { ParsedApiPage } from "../ParsedApiPage";
 
 import { getRandomWikiArticle } from "../../utils";
 import { LoadingApi } from "../LoadingApi";
 
-export class BodyApi extends React.Component {
+export class WikiPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,7 +22,6 @@ export class BodyApi extends React.Component {
   render() {
     const { article } = this.state;
     const image = article.hasImg ? article.original.source : "";
-
     if (!this.state.isLoaded) return <LoadingApi />;
     else {
       return (

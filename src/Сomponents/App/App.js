@@ -1,15 +1,15 @@
 import React from "react";
 
 import { Header } from "../Header";
-import { Main } from "../Main";
-import { Footer } from "../Footer";
 import { Description } from "../Description";
+import { Page } from "../Page";
+import { Footer } from "../Footer";
 
-export const Body = () => (
-  <main className="wrapper" id="wrapper">
+export const App = () => (
+  <main className="wrapper">
     <Header />
     <Description />
-    <Main />
+    <Page />
     <Footer />
   </main>
 );

@@ -3,6 +3,8 @@ import React from "react";
 import { PaperList } from "../PaperList";
 import { Form } from "../Form";
 
+import styles from "./Board.module.css";
+
 export class BodyBoard extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +14,7 @@ export class BodyBoard extends React.Component {
 
   render() {
     return (
-      <main>
+      <main className={styles.board}>
         <Form onSubmit={this.handleCutUpArray} />
         <PaperList cutUps={this.state.cutUps} />
       </main>
