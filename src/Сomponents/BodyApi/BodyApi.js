@@ -3,6 +3,7 @@ import styles from "./BodyApi.module.css";
 import { ParsedApiPage } from "../ParsedApiPage";
 
 import { getRandomWikiArticle } from "../../utils";
+import { LoadingApi } from "../LoadingApi";
 
 export class BodyApi extends React.Component {
   constructor(props) {
@@ -25,11 +26,7 @@ export class BodyApi extends React.Component {
     if (!this.state.isLoaded) {
       return (
         //Animation and improvement next time
-        <main>
-          <section className="contentApi">
-            <ParsedApiPage brief="Choosing article..." />
-          </section>
-        </main>
+        <LoadingApi />
       );
     } else {
       return (
