@@ -1,8 +1,15 @@
 import React from "react";
-import styles from "./Section.module.css";
+
+import styles from "./MenuOption.module.css";
+
 import cx from "classnames";
 
-export const Section = ({ isActive, onClick, heading, description = "" }) => (
+export const MenuOption = ({
+  isActive,
+  onClick,
+  heading,
+  description = ""
+}) => (
   <section
     className={cx(styles.option, { [styles.activeOption]: isActive })}
     onClick={onClick}
