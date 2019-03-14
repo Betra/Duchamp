@@ -17,6 +17,8 @@ const cutups = (state, action) => {
   switch (action.type) {
     case "ADD_CUTUP":
       return [...state, cutup(undefined, action)];
+    case "CLEAR_CUTUPS":
+      return [];
     default:
       return state;
   }
