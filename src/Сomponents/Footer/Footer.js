@@ -5,16 +5,33 @@ import styles from "./Footer.module.css";
 
 export const Footer = () => (
   <footer className={styles.footer}>
-    <Link to="/about">About</Link>
+    <span className={styles.info}>
+      Онлайн инструмент для нарезки текстов с помощью техники «
+      <Link to="/about">cut-up</Link>»
+    </span>
 
-    <Link to="/beginner">What's Cut Up?</Link>
-
-    <a
-      href="https://github.com/Betra/duchamp-it-up"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Open Source
-    </a>
+    <section className={styles.devs}>
+      <span>
+        Разработка:{" "}
+        <a
+          href="https://github.com/Betra"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Иван Дорофеев
+        </a>
+      </span>
+      {"    "}
+      <span>
+        Дизайн:{" "}
+        <a
+          href="https://github.com/yuraist"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Юра Истомин
+        </a>
+      </span>
+    </section>
   </footer>
 );

@@ -9,23 +9,20 @@ import styles from "./Form.module.css";
 export class Form extends React.Component {
   constructor(props) {
     super(props);
-    this.handleTextChange = this.handleTextChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    this.state = { text: "" };
+    this.state = { text: this.props.text ? this.props.text : "" };
   }
 
   handleTextChange = val => this.setState({ text: val });
 
-  handleClick(text) {
+  handleClick = text => {
     let cutUps = this.renderCutups(text);
     this.props.onSubmit(cutUps);
-  }
+  };
 
-  renderCutups(text) {
+  renderCutups = text => {
     let cutUps = cutRandomPieces(text);
-    cutUps = shuffleArray(cutUps);
-    return cutUps;
-  }
+    return shuffleArray(cutUps);
+  };
 
   render() {
     return (
