@@ -3,9 +3,9 @@
   "name": "Duchamp It Up!",
   "icons": [
     {
-      "src": "favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml"
+      "src": "favicon.ico",
+      "sizes": "32x32",
+      "type": "image/ico"
     }
   ],
   "start_url": ".",
