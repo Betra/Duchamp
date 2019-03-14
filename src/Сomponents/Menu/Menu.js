@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import { Section } from "../Section";
 import styles from "./Menu.module.css";
 
+import { addCutup } from "../../actions";
+import { store } from "../../store";
+
 export const Menu = props => {
   let url = document.location;
 
@@ -11,6 +14,7 @@ export const Menu = props => {
     <main className={styles.choices}>
       <Link to="/">
         <Section
+          // Clear state onClick={alert
           heading="Вставить свой текст"
           isActive={url.pathname === "/"}
         />
@@ -18,6 +22,8 @@ export const Menu = props => {
 
       <Link to="/wiki">
         <Section
+          // Clear wiki page onClick
+          onClick={() => store.dispatch(addCutup("Wiki"))}
           heading="Википедия"
           description="случайная статья"
           isActive={url.pathname === "/wiki"}
