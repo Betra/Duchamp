@@ -28,8 +28,11 @@ export async function getRandomWikiArticle() {
 
   let hasImg = pageArray.length === 5 ? true : false;
   page["hasImg"] = hasImg;
+
   page["text"] = parseWikiText(page.extract);
-  page["extract"] = getSentencesFromText(page.text, 2);
+  page["brief"] = getSentencesFromText(page.text, 2);
+  page["image"] = page.hasImg ? page.original.source : "";
+  page["link"] = "https://en.wikipedia.org/wiki/" + page.title;
 
   return page;
 }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 import { MenuOption } from "../MenuOption";
-import { clearCutups } from "../../actions";
+import { clearCutups, addArticle } from "../../actions";
 
 import styles from "./Menu.module.css";
 
@@ -24,7 +24,10 @@ export let Menu = ({ dispatch }) => {
         <MenuOption
           heading="Википедия"
           description="случайная статья"
-          onClick={() => dispatch(clearCutups())}
+          onClick={() => {
+            dispatch(clearCutups());
+            dispatch(addArticle());
+          }}
           isActive={url.pathname === "/wiki"}
         />
       </Link>

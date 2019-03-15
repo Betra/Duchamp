@@ -1,4 +1,4 @@
-import { getRandomInRange } from "../../utils";
+import { getRandomInRange } from "./getRandomInRange";
 
 export function cutRandomPieces(text) {
   if (!text) return "";

@@ -6,7 +6,7 @@ import { shuffleArray, cutRandomPieces } from "../../utils";
 
 import { addCutup, clearCutups } from "../../actions";
 
-export let PageInput = ({ dispatch }) => {
+export let FormInput = ({ dispatch }) => {
   const ref = useRef(null);
 
   return (
@@ -24,4 +24,4 @@ export let PageInput = ({ dispatch }) => {
   );
 };
 
-PageInput = connect()(PageInput);
+FormInput = connect()(FormInput);

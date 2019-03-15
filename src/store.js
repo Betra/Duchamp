@@ -1,4 +1,5 @@
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
 
 const cutup = (state, action) => {
   switch (action.type) {
@@ -24,7 +25,38 @@ const cutups = (state, action) => {
   }
 };
 
+const article = (state, action) => {
+  switch (action.type) {
+    case "ADD_ARTICLE":
+      return {
+        title: action.title,
+        image: action.image,
+        text: action.text,
+        brief: action.brief,
+        link: action.link
+      };
+    default:
+      return state;
+  }
+};
+
+const articles = (state, action) => {
+  if (typeof state === "undefined") return "";
+  switch (action.type) {
+    case "ADD_ARTICLE":
+      return article(undefined, action);
+    default:
+      return state;
+  }
+};
+
+const cutUpApp = combineReducers({ cutups, articles });
+
 export const store = createStore(
-  cutups,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  cutUpApp,
+  compose(
+    window.__REDUX_DEVTOOLS_EXTENSION__ &&
+      window.__REDUX_DEVTOOLS_EXTENSION__(),
+    applyMiddleware(thunk)
+  )
 );
