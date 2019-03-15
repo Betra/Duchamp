@@ -1,11 +1,9 @@
 import { getRandomInRange } from "../../utils";
-import { addCutup } from "../../actions";
-import { store } from "../../store";
 
 export function cutRandomPieces(text) {
   if (!text) return "";
 
-  text.match(/[!.?]$/) ? (text = String(text)) : (text += ".");
+  text.match(/[!.?]$/) ? (text = String(text)) : (text += "."); //Looks, wether there are no sentences
   text = text.replace(/[\r\n]+/, "");
 
   const sentences = text.match(/[^.!?]+[.!?]+/g);
@@ -26,7 +24,6 @@ export function cutRandomPieces(text) {
       let cutUp = sentence.splice(0, wordsInCutUp);
 
       cutUp = cutUp.join(" ");
-      store.dispatch(addCutup(cutUp));
       cutUps.push(cutUp); // add the cutup to the array
 
       if (sentence.length === 0) {
