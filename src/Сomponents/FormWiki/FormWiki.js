@@ -15,4 +15,11 @@ const mapStateToProps = state => {
   };
 };
 
-export const FormWiki = connect(mapStateToProps)(FormApi);
+const mapDispatchToProps = dispatch => ({
+  onSubmit: dispatch(add)
+});
+
+export const FormWiki = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FormApi);
