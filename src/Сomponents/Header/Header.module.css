@@ -1,6 +1,12 @@
 @font-face {
-  font-family: "Futura-Bold";
-  src: url("../../CSS/fonts/FuturaBold.ttf");
+  font-family: "Futura PT";
+  src: url("../../CSS/fonts/FuturaPT-Bold.eot");
+  src: local("Futura PT Bold"), local("FuturaPT-Bold"),
+    url("../../CSS/fonts/FuturaPT-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../../CSS/fonts/FuturaPT-Bold.woff") format("woff"),
+    url("../../CSS/fonts/FuturaPT-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
 
 .header {
@@ -12,8 +18,9 @@
   display: flex;
   align-items: center;
 
-  font-family: "Futura-Bold";
+  font-family: "Futura PT";
   font-size: 4rem;
   font-weight: bold;
+  font-style: normal;
   color: #252525;
 }
