@@ -1,7 +1,15 @@
 import React from "react";
+import { connect } from "react-redux";
 
 import styles from "./Input.module.css";
+import { updateText } from "../../actions";
 
-export const Input = React.forwardRef(({ placeholder }, ref) => (
-  <textarea className={styles.inputArea} ref={ref} placeholder={placeholder} />
-));
+export let Input = ({ dispatch, placeholder }) => (
+  <textarea
+    className={styles.inputArea}
+    onChange={e => dispatch(updateText(e.target.value))}
+    placeholder={placeholder}
+  />
+);
+
+Input = connect()(Input);

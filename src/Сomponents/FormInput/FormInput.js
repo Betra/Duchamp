@@ -1,27 +1,13 @@
-import React, { useRef } from "react";
 import { connect } from "react-redux";
 
 import { Form } from "../Form";
-import { shuffleArray, cutRandomPieces } from "../../utils";
+import { clearAndCreateCutups } from "../../actions";
 
-import { addCutup, clearCutups } from "../../actions";
+const mapDispatchToProps = dispatch => ({
+  onSubmit: () => dispatch(clearAndCreateCutups())
+});
 
-export let FormInput = ({ dispatch }) => {
-  const ref = useRef(null);
-
-  return (
-    <main>
-      <Form
-        ref={r => (ref.current = r)}
-        onSubmit={() => {
-          dispatch(clearCutups());
-          let cutUps = cutRandomPieces(ref.current.value);
-          cutUps = shuffleArray(cutUps);
-          cutUps.forEach(cutUp => dispatch(addCutup(cutUp)));
-        }}
-      />
-    </main>
-  );
-};
-
-FormInput = connect()(FormInput);
+export const FormInput = connect(
+  null,
+  mapDispatchToProps
+)(Form);

@@ -3,15 +3,15 @@ import React from "react";
 import { Input } from "../Input";
 import { Button } from "../Button";
 
-import styles from "./Form.module.css";
-
 import { getRandomPlaceholder } from "../../utils";
 
-export const Form = React.forwardRef(
-  ({ onSubmit, buttonDisabled = false }, ref) => (
+import styles from "./Form.module.css";
+
+export const Form = ({ onSubmit, buttonDisabled = false }) => {
+  return (
     <form className={styles.formInput}>
-      <Input ref={ref} placeholder={getRandomPlaceholder()} />
+      <Input placeholder={getRandomPlaceholder()} />
       <Button onClick={onSubmit} disabled={buttonDisabled} />
     </form>
-  )
-);
+  );
+};
