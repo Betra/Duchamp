@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Futura PT";
+  src: url("../../CSS/fonts/FuturaPT-Bold.eot");
+  src: local("Futura PT Bold"), local("FuturaPT-Bold"),
+    url("../../CSS/fonts/FuturaPT-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../../CSS/fonts/FuturaPT-Bold.woff") format("woff"),
+    url("../../CSS/fonts/FuturaPT-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+.e404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+
+  font-size: 10rem;
+  color: rgb(80, 80, 80);
+  opacity: 0.25;
+  font-family: "Futura PT";
+  font-weight: bold;
+  font-style: normal;
+}
