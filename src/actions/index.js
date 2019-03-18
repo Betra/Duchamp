@@ -1,3 +1,9 @@
-export { addCutup } from "./addCutup";
+//Cutups
+export { addCutUps } from "./addCutUps";
 export { clearCutups } from "./clearCutups";
-export { addArticle } from "./addArticle";
+export { clearAndCreateCutups } from "./clearAndCreateCutups";
+//Article API
+export { article, addArticle } from "./article";
+
+//Util
+export { updateText, text } from "./text";
