@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./button.module.css";
+import styles from "./Button.module.css";
 
 export const Button = ({ onClick, value = "Cut Up!", disabled = false }) => {
   return (
