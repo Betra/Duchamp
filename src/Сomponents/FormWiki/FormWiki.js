@@ -1,25 +1,42 @@
-// import { LoadingApi } from "../LoadingApi";
-// import { addArticle } from "../../actions";
-
-import { FormApi } from "../FormApi/FormApi";
+import { FormApi } from "../FormApi";
 import { connect } from "react-redux";
+import { applyLifecycle } from "react-lifecycle-component";
+
+import { clearAndCreateCutups, addArticle } from "../../actions";
 
 const mapStateToProps = state => {
-  const { title, image, text, brief, link } = state.articles;
-  return {
+  const {
+    hasError,
+    error,
+    isLoading,
     title,
     image,
     text,
     brief,
     link
+  } = state.article;
+  const cutups = state.cutups;
+
+  return {
+    hasError,
+    error,
+    isLoading,
+    title,
+    image,
+    text,
+    brief,
+    link,
+    cutups
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  onSubmit: dispatch(add)
+  componentDidMount: () => dispatch(addArticle()),
+  onSubmit: () => dispatch(clearAndCreateCutups(false)),
+  onNext: () => dispatch(addArticle())
 });
 
 export const FormWiki = connect(
   mapStateToProps,
   mapDispatchToProps
-)(FormApi);
+)(applyLifecycle(FormApi));
