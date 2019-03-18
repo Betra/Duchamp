@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./Paper.module.css";
+import styles from "./Cutup.module.css";
 
-// <Paper cut={true} ragged={false} > </Paper>
-export function Paper(props) {
+// <Cutup cut={true} ragged={false} > </Paper>
+export function Cutup(props) {
   if (
     (props.cut || props.ragged) &&
     props.cut !== props.ragged &&
