@@ -3,7 +3,7 @@ import { parseQuery } from "./parseQuery";
 import { parseWikiText } from "./parseWikiText";
 import { getSentencesFromText } from "./getSentencesFromText";
 
-export async function getRandomWikiArticle() {
+export const fetchRandomWikiArticle = async () => {
   const proxyUrl = "https://cors-anywhere.herokuapp.com/";
   const wikiUrl = "https://en.wikipedia.org/w/api.php?";
 
@@ -34,5 +34,10 @@ export async function getRandomWikiArticle() {
   page["image"] = page.hasImg ? page.original.source : "";
   page["link"] = "https://en.wikipedia.org/wiki/" + page.title;
 
+  delete page.original;
+  delete page.pageid;
+  delete page.hasImg;
+  delete page.ns;
+
   return page;
-}
+};
