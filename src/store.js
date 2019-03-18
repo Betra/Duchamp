@@ -1,28 +1,26 @@
-import { createStore, combineReducers } from "redux";
+import { createStore, combineReducers, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
 
-const cutup = (state, action) => {
+import { article, text } from "./actions";
+
+const cutups = (state = [], action) => {
   switch (action.type) {
-    case "ADD_CUTUP":
-      return {
-        id: action.id,
-        text: action.text
-      };
+    case "CLEAR_CUTUPS":
+      return [];
+
+    case "ADD_CUTUPS":
+      return action.cutups;
     default:
       return state;
   }
 };
 
-const cutups = (state, action) => {
-  if (typeof state === "undefined") return [];
-  switch (action.type) {
-    case "ADD_CUTUP":
-      return [...state, cutup(undefined, action)];
-    default:
-      return state;
-  }
-};
+const cutUpApp = combineReducers({ cutups, article, text });
 
 export const store = createStore(
-  cutups,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  cutUpApp,
+  compose(
+    applyMiddleware(thunk),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 );

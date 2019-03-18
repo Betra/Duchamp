@@ -10,14 +10,16 @@
     "classnames": "^2.2.6",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
+    "react-lifecycle-component": "^4.0.0",
     "react-redux": "^6.0.1",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.5",
+    "react-scripts": "^2.1.8",
     "react-svg": "^7.2.7",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "system-font-css": "^2.0.2"
+    "system-font-css": "^2.0.2",
+    "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
