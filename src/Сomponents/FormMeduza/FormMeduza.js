@@ -2,7 +2,7 @@ import { FormApi } from "../FormApi";
 import { connect } from "react-redux";
 import { applyLifecycle } from "react-lifecycle-component";
 
-import { clearAndCreateCutups, getRandomWikiArticle } from "../../actions";
+import { clearAndCreateCutups, getRandomMeduzaArticle } from "../../actions";
 
 const mapStateToProps = state => {
   const {
@@ -31,12 +31,12 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  componentDidMount: () => dispatch(getRandomWikiArticle()),
+  componentDidMount: () => dispatch(getRandomMeduzaArticle()),
   onSubmit: () => dispatch(clearAndCreateCutups(false)),
-  onNext: () => dispatch(getRandomWikiArticle())
+  onNext: () => dispatch(getRandomMeduzaArticle())
 });
 
-export const FormWiki = connect(
+export const FormMeduza = connect(
   mapStateToProps,
   mapDispatchToProps
 )(applyLifecycle(FormApi));

@@ -1,4 +1,4 @@
-import { fetchRandomWikiArticle } from "../utils";
+import { fetchRandomWikiArticle, fetchRandomMeduzaArticle } from "../utils";
 import { clearCutups } from "./clearCutups";
 
 export const article = (state = {}, action) => {
@@ -53,11 +53,24 @@ export const articleFetchDataSuccess = ({
   text
 });
 
-export const addArticle = () => async dispatch => {
+export const getRandomWikiArticle = () => async dispatch => {
   dispatch(articleIsLoading());
   dispatch(clearCutups());
 
   await fetchRandomWikiArticle()
+    .then(data => dispatch(articleFetchDataSuccess(data)))
+    .catch(error => {
+      console.log(error);
+      console.log(typeof error);
+      dispatch(articleReturnedError(true, error.message));
+    });
+};
+
+export const getRandomMeduzaArticle = () => async dispatch => {
+  dispatch(articleIsLoading());
+  dispatch(clearCutups());
+
+  await fetchRandomMeduzaArticle()
     .then(data => dispatch(articleFetchDataSuccess(data)))
     .catch(error => {
       console.log(error);

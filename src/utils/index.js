@@ -9,3 +9,5 @@ export { parseQuery } from "./parseQuery";
 ////Wiki
 export { parseWikiText } from "./parseWikiText";
 export { fetchRandomWikiArticle } from "./fetchRandomWikiArticle";
+
+export { fetchRandomMeduzaArticle } from "./fetchRandomMeduzaArticle";
