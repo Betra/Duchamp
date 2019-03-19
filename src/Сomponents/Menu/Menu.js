@@ -1,50 +1,53 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-import { Section } from "../Section";
+import { MenuOption } from "../MenuOption";
+import { clearCutups } from "../../actions";
+
 import styles from "./Menu.module.css";
 
-import { addCutup } from "../../actions";
-import { store } from "../../store";
-
-export const Menu = props => {
+export let Menu = ({ dispatch }) => {
   let url = document.location;
 
   return (
     <main className={styles.choices}>
       <Link to="/">
-        <Section
-          // Clear state onClick={alert
+        <MenuOption
           heading="Вставить свой текст"
+          onClick={() => dispatch(clearCutups())}
           isActive={url.pathname === "/"}
         />
       </Link>
 
       <Link to="/wiki">
-        <Section
-          // Clear wiki page onClick
-          onClick={() => store.dispatch(addCutup("Wiki"))}
+        <MenuOption
           heading="Википедия"
           description="случайная статья"
+          onClick={() => dispatch(clearCutups())}
           isActive={url.pathname === "/wiki"}
         />
       </Link>
 
       <Link to="/meduza">
-        <Section
+        <MenuOption
           heading="Медуза"
           description="случайная новость"
+          onClick={() => dispatch(clearCutups())}
           isActive={url.pathname === "/meduza"}
         />
       </Link>
 
       <Link to="/nyt">
-        <Section
+        <MenuOption
           heading="Нью-Йорк Таймс"
           description="случайная новость"
+          onClick={() => dispatch(clearCutups())}
           isActive={url.pathname === "/nyt"}
         />
       </Link>
     </main>
   );
 };
+
+Menu = connect()(Menu);
