@@ -1,0 +1,1 @@
+export { FormMeduza } from "./FormMeduza";

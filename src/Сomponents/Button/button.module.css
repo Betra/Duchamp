@@ -5,7 +5,7 @@ button.button {
   border-radius: 5px;
 
   padding: 1rem 2rem;
-  margin: 1em 0.3em 0.3em 0;
+  margin: 1rem 1.5rem 0.3rem 0;
   box-sizing: border-box;
   text-decoration: none;
 
@@ -13,17 +13,24 @@ button.button {
   transition: all 0.2s;
   min-width: 40px;
   font-size: 0.95rem;
+
+  font-family: inherit;
+}
+
+.button::after {
+  padding-right: 2rem;
 }
 
 .button:hover {
-  color: #252525;
+  background-image: linear-gradient(-160deg, #b203a3 0%, #6013d0 100%);
+  font-weight: 450;
   background-color: transparent;
 }
 
-@media all and (max-width: 30em) {
+@media all and (max-width: 30rem) {
   .button {
     display: block;
-    margin: 0.4em auto;
+    margin: 0.4rem auto;
   }
 }
 

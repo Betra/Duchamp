@@ -1,4 +1,8 @@
-import { fetchRandomWikiArticle } from "../utils";
+import {
+  fetchRandomWikiArticle,
+  fetchRandomMeduzaArticle,
+  fetchRandomGuardianArticle
+} from "../utils";
 import { clearCutups } from "./clearCutups";
 
 export const article = (state = {}, action) => {
@@ -20,6 +24,7 @@ export const article = (state = {}, action) => {
         text: action.text,
         brief: action.brief,
         link: action.link,
+        locale: action.locale,
         isLoading: false
       };
     default:
@@ -43,21 +48,49 @@ export const articleFetchDataSuccess = ({
   brief,
   image,
   link,
-  text
+  text,
+  locale
 }) => ({
   type: "ARTICLE_FETCH_DATA_SUCCESS",
   title,
   brief,
   image,
   link,
-  text
+  text,
+  locale
 });
 
-export const addArticle = () => async dispatch => {
+export const getRandomWikiArticle = locale => async dispatch => {
   dispatch(articleIsLoading());
   dispatch(clearCutups());
 
-  await fetchRandomWikiArticle()
+  await fetchRandomWikiArticle(locale)
+    .then(data => dispatch(articleFetchDataSuccess(data)))
+    .catch(error => {
+      console.log(error);
+      console.log(typeof error);
+      dispatch(articleReturnedError(true, error.message));
+    });
+};
+
+export const getRandomMeduzaArticle = locale => async dispatch => {
+  dispatch(articleIsLoading());
+  dispatch(clearCutups());
+
+  await fetchRandomMeduzaArticle(locale)
+    .then(data => dispatch(articleFetchDataSuccess(data)))
+    .catch(error => {
+      console.log(error);
+      console.log(typeof error);
+      dispatch(articleReturnedError(true, error.message));
+    });
+};
+
+export const getRandomGuardianArticle = locale => async dispatch => {
+  dispatch(articleIsLoading());
+  dispatch(clearCutups());
+
+  await fetchRandomGuardianArticle(locale)
     .then(data => dispatch(articleFetchDataSuccess(data)))
     .catch(error => {
       console.log(error);

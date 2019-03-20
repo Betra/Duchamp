@@ -38,12 +38,12 @@ export let Menu = ({ dispatch }) => {
         />
       </Link>
 
-      <Link to="/nyt">
+      <Link to="/guardian">
         <MenuOption
-          heading="Нью-Йорк Таймс"
+          heading="Гардиан"
           description="случайная новость"
           onClick={() => dispatch(clearCutups())}
-          isActive={url.pathname === "/nyt"}
+          isActive={url.pathname === "/guardian"}
         />
       </Link>
     </main>

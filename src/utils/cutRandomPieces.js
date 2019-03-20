@@ -33,5 +33,5 @@ export function cutRandomPieces(text) {
     }
   }
 
-  return cutUps.filter(Boolean);
+  return cutUps.filter(cutUp => /\S/.test(cutUp));
 }
