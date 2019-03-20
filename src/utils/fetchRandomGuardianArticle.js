@@ -21,7 +21,14 @@ export const fetchRandomGuardianArticle = async (locale = "en") => {
   });
 
   let request = guardianUrl + query;
-  const response = await fetch(request);
+  const response = await fetch(request, {
+    method: "GET",
+    mode: "cors",
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
+    body: null
+  });
   const data = await response.json();
 
   const article = data.response.results[articleNumber];
