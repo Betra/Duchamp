@@ -30,3 +30,25 @@
   font-weight: bold;
   padding-bottom: 1rem;
 }
+
+@media (max-width: 1000px) {
+  .suggestion {
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+  }
+  .suggestionHeader {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .suggestionImage {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .suggestionImage img {
+    max-height: 300px;
+  }
+}

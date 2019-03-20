@@ -1,3 +1,7 @@
 import React from "react";
 
-export const LoadingApi = () => <section>Choosing Article...</section>;
+import styles from "./LoadingApi.module.css";
+
+export const LoadingApi = () => (
+  <section className={styles.loading}>Choosing Article...</section>
+);

@@ -10,6 +10,7 @@
 
   margin: 0 -40px;
   height: 70px;
+
   box-sizing: border-box;
   padding: 0 40px;
 
@@ -31,8 +32,23 @@
 }
 
 .info {
-  display: flex;
   flex: 0 1 auto;
-  justify-content: center;
-  align-items: center;
+}
+
+@media (max-width: 400px) {
+  .footer {
+    flex-flow: column nowrap;
+    height: auto;
+  }
+  .info {
+    box-sizing: initial;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .devs {
+    flex-flow: row wrap;
+    width: 100%;
+    padding: 1rem 0;
+    justify-content: space-between;
+  }
 }

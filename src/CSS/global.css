@@ -15,6 +15,15 @@ main.wrapper {
   font-size: 9pt;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #6013d0;
+}
+
 main.wrapper {
   padding: 0 40px;
   box-sizing: border-box;
@@ -24,11 +33,8 @@ main.wrapper {
   flex-flow: column nowrap;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #6013d0;
+@media screen and (max-width: 400px) {
+  main.wrapper {
+    max-width: 100%;
+  }
 }
