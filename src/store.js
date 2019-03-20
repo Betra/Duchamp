@@ -17,10 +17,16 @@ const cutups = (state = [], action) => {
 
 const cutUpApp = combineReducers({ cutups, article, text });
 
+const devTools =
+  process.env.NODE_ENV === "development"
+    ? window.__REDUX_DEVTOOLS_EXTENSION__ &&
+      window.__REDUX_DEVTOOLS_EXTENSION__()
+    : null;
+
 export const store = createStore(
   cutUpApp,
   compose(
     applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+    devTools
   )
 );
