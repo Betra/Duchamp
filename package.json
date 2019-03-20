@@ -36,5 +36,12 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "browser": {
+    "colors": false,
+    "events": "eventemitter3",
+    "checkForModuleDuplicates": false,
+    "url": "./shims/url",
+    "tracer": false
+  }
 }
