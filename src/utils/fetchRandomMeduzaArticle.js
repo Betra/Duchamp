@@ -18,13 +18,28 @@ export const fetchRandomMeduzaArticle = async (locale = "ru") => {
     locale: locale
   });
 
-  let request = meduzaUrlQuery + query;
-  const collection = await fetch(request);
+  let request = proxyUrl + meduzaUrlQuery + query;
+  const collection = await fetch(request, {
+    method: "GET",
+    mode: "cors",
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
+    body: null
+  });
+
   const data = await collection.json();
 
   const articleUrl = data.collection[articleNum];
 
-  const response = await fetch(meduzaUrlApi + articleUrl);
+  const response = await fetch(proxyUrl + meduzaUrlApi + articleUrl, {
+    method: "GET",
+    mode: "cors",
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
+    body: null
+  });
   let article = await response.json();
 
   article = article.root;

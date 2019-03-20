@@ -20,7 +20,14 @@ export const fetchRandomWikiArticle = async (locale = "en") => {
 
   let request = proxyUrl + wikiUrl + query;
 
-  const response = await fetch(request);
+  const response = await fetch(request, {
+    method: "GET",
+    mode: "cors",
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    },
+    body: null
+  });
   const data = await response.json();
 
   const page = convertJsonToArray(data.query.pages)[0];
