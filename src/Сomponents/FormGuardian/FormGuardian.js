@@ -2,7 +2,7 @@ import { FormApi } from "../FormApi";
 import { connect } from "react-redux";
 import { applyLifecycle } from "react-lifecycle-component";
 
-import { clearAndCreateCutups, getRandomWikiArticle } from "../../actions";
+import { clearAndCreateCutups, getRandomGuardianArticle } from "../../actions";
 
 const mapStateToProps = state => {
   const {
@@ -13,8 +13,7 @@ const mapStateToProps = state => {
     image,
     text,
     brief,
-    link,
-    locale
+    link
   } = state.article;
   const cutups = state.cutups;
 
@@ -27,18 +26,17 @@ const mapStateToProps = state => {
     text,
     brief,
     link,
-    locale,
     cutups
   };
 };
 
 const mapDispatchToProps = dispatch => ({
-  componentDidMount: () => dispatch(getRandomWikiArticle("en")),
+  componentDidMount: () => dispatch(getRandomGuardianArticle()),
   onSubmit: () => dispatch(clearAndCreateCutups(false)),
-  onNext: () => dispatch(getRandomWikiArticle("en"))
+  onNext: () => dispatch(getRandomGuardianArticle())
 });
 
-export const FormWiki = connect(
+export const FormGuardian = connect(
   mapStateToProps,
   mapDispatchToProps
 )(applyLifecycle(FormApi));

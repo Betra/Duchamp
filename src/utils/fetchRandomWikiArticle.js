@@ -3,9 +3,9 @@ import { parseQuery } from "./parseQuery";
 import { parseWikiText } from "./parseWikiText";
 import { getSentencesFromText } from "./getSentencesFromText";
 
-export const fetchRandomWikiArticle = async () => {
+export const fetchRandomWikiArticle = async (locale = "en") => {
   const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-  const wikiUrl = "https://en.wikipedia.org/w/api.php?";
+  const wikiUrl = "https://" + locale + ".wikipedia.org/w/api.php?";
 
   let query = parseQuery({
     format: "json",
@@ -33,6 +33,7 @@ export const fetchRandomWikiArticle = async () => {
   page["brief"] = getSentencesFromText(page.text, 2);
   page["image"] = page.hasImg ? page.original.source : "";
   page["link"] = "https://en.wikipedia.org/wiki/" + page.title;
+  page["locale"] = locale;
 
   delete page.original;
   delete page.pageid;

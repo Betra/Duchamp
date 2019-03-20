@@ -1,18 +1,30 @@
-import { fetchAppendMeduzaList } from "./fetchAppendMeduzaList";
 import { getRandomInRange } from "./getRandomInRange";
 import { parseHtmlToPlain } from "./parseHtmlToPlain";
+import { parseQuery } from "./parseQuery";
 
-export const fetchRandomMeduzaArticle = async () => {
+export const fetchRandomMeduzaArticle = async (locale = "ru") => {
   const proxyUrl = "https://cors-anywhere.herokuapp.com/";
   const meduzaUrl = "https://meduza.io/";
   const meduzaUrlApi = "https://meduza.io/api/v3/";
   const meduzaUrlQuery = "https://meduza.io/api/v3/search?";
 
-  const collection = await fetchAppendMeduzaList(meduzaUrlQuery, 1, proxyUrl);
+  const page = getRandomInRange(1, 650);
+  const articleNum = getRandomInRange(0, 99);
 
-  const position = getRandomInRange(0, collection.length);
+  let query = parseQuery({
+    chrono: "news",
+    page: page,
+    per_page: 100,
+    locale: locale
+  });
 
-  const response = await fetch(proxyUrl + meduzaUrlApi + collection[position]);
+  let request = meduzaUrlQuery + query;
+  const collection = await fetch(request);
+  const data = await collection.json();
+
+  const articleUrl = data.collection[articleNum];
+
+  const response = await fetch(meduzaUrlApi + articleUrl);
   let article = await response.json();
 
   article = article.root;
@@ -32,16 +44,14 @@ export const fetchRandomMeduzaArticle = async () => {
   delete article.published_at;
   delete article.footer;
 
-  //itle,image,text,brief,link,
-
   article["link"] = meduzaUrl + article.url;
   article["brief"] = article.description;
   article["text"] = parseHtmlToPlain(article.content.body);
+  article["locale"] = locale;
 
-  if (article.image) article["image"] = meduzaUrl + article.image.large_url;
-  else article["image"] = meduzaUrl + article.share_image;
-
-  console.log(article.text);
+  article["image"] = article.image
+    ? meduzaUrl + article.image.large_url
+    : meduzaUrl + article.share_image;
 
   return article;
 };

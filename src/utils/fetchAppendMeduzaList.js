@@ -1,13 +1,18 @@
 import { parseQuery } from "./parseQuery";
 
-export const fetchAppendMeduzaList = async (url, pages = 1, proxy = "") => {
+export const fetchAppendMeduzaList = async (
+  url,
+  locale = "ru",
+  pages = 1,
+  proxy = ""
+) => {
   let collection = [];
 
   let query = {
     chrono: "news",
     page: 0,
     per_page: 100,
-    locale: "ru"
+    locale: locale
   };
 
   for (let i = 0; i < pages; i++) {

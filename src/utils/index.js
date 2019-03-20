@@ -11,3 +11,4 @@ export { parseWikiText } from "./parseWikiText";
 export { fetchRandomWikiArticle } from "./fetchRandomWikiArticle";
 
 export { fetchRandomMeduzaArticle } from "./fetchRandomMeduzaArticle";
+export { fetchRandomGuardianArticle } from "./fetchRandomGuardianArticle";

@@ -6,7 +6,8 @@ export { clearAndCreateCutups } from "./clearAndCreateCutups";
 export {
   article,
   getRandomWikiArticle,
-  getRandomMeduzaArticle
+  getRandomMeduzaArticle,
+  getRandomGuardianArticle
 } from "./article";
 
 //Util
