@@ -25,17 +25,17 @@
 
 .devs {
   display: flex;
-  flex: 0 0 auto;
+  flex: 1 0 auto;
   width: 25%;
   flex-flow: row nowrap;
   justify-content: space-around;
 }
 
 .info {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .footer {
     flex-flow: column nowrap;
     height: auto;
@@ -49,6 +49,6 @@
     flex-flow: row wrap;
     width: 100%;
     padding: 1rem 0;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
