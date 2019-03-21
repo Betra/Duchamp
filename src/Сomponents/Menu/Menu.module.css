@@ -1,6 +1,14 @@
 .choices {
   display: flex;
   flex-flow: column nowrap;
-
+  flex: 1 1 auto;
   margin-top: 45px;
+  transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
+  height: min-content;
+}
+
+@media (min-width: 1000px) {
+  .choices {
+    width: 40%;
+  }
 }

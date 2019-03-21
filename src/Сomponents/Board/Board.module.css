@@ -7,3 +7,15 @@
   flex-flow: column nowrap;
   justify-content: center;
 }
+
+@media (max-width: 600px) {
+  .board {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  .board {
+    margin-top: -7em;
+  }
+}

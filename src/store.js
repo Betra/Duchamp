@@ -15,7 +15,16 @@ const cutups = (state = [], action) => {
   }
 };
 
-const cutUpApp = combineReducers({ cutups, article, text });
+const animation = (state = true, action) => {
+  switch (action.type) {
+    case "SWITCH_MENU":
+      return !state;
+    default:
+      return state;
+  }
+};
+
+const cutUpApp = combineReducers({ cutups, article, text, animation });
 
 const devTools =
   process.env.NODE_ENV === "development"

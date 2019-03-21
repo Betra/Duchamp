@@ -1,6 +1,15 @@
 import React from "react";
 import styles from "./Description.module.css";
 
-export const Description = () => (
-  <section className={styles.description}>Нарежь текст онлайн</section>
+import { connect } from "react-redux";
+
+export let Description = ({ dispatch }) => (
+  <section
+    className={styles.description}
+    onClick={() => dispatch({ type: "SWITCH_MENU" })}
+  >
+    Нарежь текст онлайн
+  </section>
 );
+
+Description = connect()(Description);
