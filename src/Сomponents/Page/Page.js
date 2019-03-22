@@ -8,7 +8,7 @@ import styles from "./Page.module.css";
 import { connect } from "react-redux";
 
 import { applyLifecycle } from "react-lifecycle-component";
-import { shiftMenu } from "../../utils";
+import { shiftBigMenu, shiftMediumMenu } from "../../utils";
 
 export let Page = () => (
   <main className={styles.page}>
@@ -19,8 +19,22 @@ export let Page = () => (
   </main>
 );
 
-const mapDispatchToProps = dispatch => ({
-  componentDidMount: () => window.addEventListener("scroll", () => shiftMenu())
-});
+let shiftMenu;
+let isShifting = false;
 
-Page = connect(mapDispatchToProps)(applyLifecycle(Page));
+if (window.innerWidth >= 1000) {
+  shiftMenu = shiftBigMenu;
+  isShifting = true;
+} else if (window.innerWidth < 1000 && window.innerWidth > 600) {
+  shiftMenu = shiftMediumMenu;
+  isShifting = true;
+}
+
+if (isShifting) {
+  const mapDispatchToProps = () => ({
+    componentDidMount: () =>
+      window.addEventListener("scroll", () => shiftMenu())
+  });
+
+  Page = connect(mapDispatchToProps)(applyLifecycle(Page));
+} else Page = connect()(Page);
