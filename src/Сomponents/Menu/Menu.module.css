@@ -3,12 +3,14 @@
   flex-flow: column nowrap;
   flex: 1 1 auto;
   margin-top: 45px;
-  transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
+  /* transition: transform 1s cubic-bezier(0.19, 1.34, 0.83, 0.92); */
+  transition: opacity 1s ease-in-out;
   height: min-content;
+  width: 40%;
 }
 
-@media (min-width: 1000px) {
+@media (max-width: 1000px) {
   .choices {
-    width: 40%;
+    width: auto;
   }
 }

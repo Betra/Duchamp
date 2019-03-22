@@ -1,15 +1,8 @@
 import React from "react";
 import styles from "./Description.module.css";
 
-import { connect } from "react-redux";
-
-export let Description = ({ dispatch }) => (
-  <section
-    className={styles.description}
-    onClick={() => dispatch({ type: "SWITCH_MENU" })}
-  >
+export let Description = () => (
+  <section className={styles.description} id="description">
     Нарежь текст онлайн
   </section>
 );
-
-Description = connect()(Description);

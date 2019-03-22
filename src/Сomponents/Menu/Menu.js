@@ -6,19 +6,11 @@ import { MenuOption } from "../MenuOption";
 import { clearCutups } from "../../actions";
 import styles from "./Menu.module.css";
 
-export let Menu = ({ dispatch, animation }) => {
+export let Menu = ({ dispatch }) => {
   let url = document.location;
 
-  let ani;
-
-  if (!animation)
-    ani = { transform: "translate3d(-100vw, 0, 0)", display: "hidden" };
-  else ani = { transform: "translate3d(0vw, 0, 0)" };
-  // if (!animation) ani = "neAni";
-  // else ani = "Ani";
-
   return (
-    <aside style={ani} id="menu" className={styles.choices}>
+    <aside id="menu" className={styles.choices}>
       <Link to="/">
         <MenuOption
           heading="Вставить свой текст"
@@ -57,8 +49,4 @@ export let Menu = ({ dispatch, animation }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  animation: state.animation
-});
-
-Menu = connect(mapStateToProps)(Menu);
+Menu = connect()(Menu);
