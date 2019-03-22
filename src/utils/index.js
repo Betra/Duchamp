@@ -5,7 +5,8 @@ export { getRandomInRange } from "./getRandomInRange";
 export { getRandomPlaceholder } from "./getRandomPlaceholder";
 export { getSentencesFromText } from "./getSentencesFromText";
 export { throttle } from "./throttle";
-export { shiftMenu } from "./shiftMenu";
+export { shiftBigMenu, shiftMediumMenu } from "./shiftMenu";
+export { goUpAnimation } from "./goUpAnimation";
 //Api
 export { parseQuery } from "./parseQuery";
 ////Wiki
