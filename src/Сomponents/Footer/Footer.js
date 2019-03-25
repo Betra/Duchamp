@@ -32,6 +32,17 @@ export const Footer = () => (
           Юра Истомин
         </a>
       </span>
+      {"    "}
+      <span>
+        Художник:{" "}
+        <a
+          href="https://github.com/reginPekin"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Регина Валетова
+        </a>
+      </span>
     </section>
   </footer>
 );

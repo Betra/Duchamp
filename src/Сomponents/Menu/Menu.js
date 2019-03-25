@@ -4,14 +4,13 @@ import { connect } from "react-redux";
 
 import { MenuOption } from "../MenuOption";
 import { clearCutups } from "../../actions";
-
 import styles from "./Menu.module.css";
 
 export let Menu = ({ dispatch }) => {
   let url = document.location;
 
   return (
-    <main className={styles.choices}>
+    <aside id="menu" className={styles.choices}>
       <Link to="/">
         <MenuOption
           heading="Вставить свой текст"
@@ -46,7 +45,7 @@ export let Menu = ({ dispatch }) => {
           isActive={url.pathname === "/guardian"}
         />
       </Link>
-    </main>
+    </aside>
   );
 };
 

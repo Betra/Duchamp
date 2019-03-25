@@ -5,3 +5,10 @@
   flex-flow: row nowrap;
   flex: 1 0 auto;
 }
+
+@media (max-width: 600px) {
+  .page {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+}

@@ -6,6 +6,8 @@ import { LoadingApi } from "../LoadingApi";
 import { ErrorMessage } from "../ErrorMessage";
 import { Cutups } from "../Cutups";
 
+import styles from "./FormApi.module.css";
+
 export const FormApi = ({
   link,
   title,
@@ -23,10 +25,12 @@ export const FormApi = ({
   else {
     return (
       <main>
-        <section>
+        <section className={styles.formApi}>
           <ApiInfo link={link} title={title} brief={brief} imageUrl={image} />
-          <Button onClick={onSubmit} />
-          <Button onClick={onNext} value="Next" />
+          <section className={styles.buttons}>
+            <Button onClick={onSubmit} />
+            <Button onClick={onNext} value="Next" />
+          </section>
         </section>
         <Cutups cutups={cutups} />
       </main>
