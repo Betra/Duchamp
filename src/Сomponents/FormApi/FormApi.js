@@ -27,8 +27,10 @@ export const FormApi = ({
       <main>
         <section className={styles.formApi}>
           <ApiInfo link={link} title={title} brief={brief} imageUrl={image} />
-          <Button onClick={onSubmit} />
-          <Button onClick={onNext} value="Next" />
+          <section className={styles.buttons}>
+            <Button onClick={onSubmit} />
+            <Button onClick={onNext} value="Next" />
+          </section>
         </section>
         <Cutups cutups={cutups} />
       </main>

@@ -1,14 +1,27 @@
-export const throttle = (caller, interval) => {
-  let isBlocking = false;
+export const throttle = (func, ms) => {
+  let isThrottled = false,
+    savedArgs,
+    savedThis;
 
-  return (...args) => {
-    if (!isBlocking) {
-      caller(...args);
-      isBlocking = true;
-
-      setTimeout(() => {
-        isBlocking = false;
-      }, interval);
+  function wrapper() {
+    if (isThrottled) {
+      savedArgs = arguments;
+      savedThis = this;
+      return;
     }
-  };
+
+    func.apply(this, arguments);
+
+    isThrottled = true;
+
+    setTimeout(() => {
+      isThrottled = false;
+      if (savedArgs) {
+        wrapper.apply(savedThis, savedArgs);
+        savedArgs = savedThis = null;
+      }
+    }, ms);
+  }
+
+  return wrapper;
 };
